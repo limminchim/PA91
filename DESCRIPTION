@@ -1,0 +1,7 @@
+Title: Visualization of Violent Crime Rates by US States (1973)
+Author: Paul Lim Min Chim <limmc@i2r.a-star.edu.sg>
+AuthorUrl: https://limminchim.shinyapps.io/PA91
+License: MIT
+DisplayMode: Showcase
+Tags: gvisGeoChart pageWithSidebar reactive sidebarPanel selectInput
+Type: Shiny
