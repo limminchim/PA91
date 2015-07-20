@@ -17,7 +17,7 @@ shinyServer(
                                              "Rape" = "rape",
                                              "Murder" = "murder")})
                 
-                output$header <- renderText({paste("Map of ", variable(), " arrests per 100,000 people in 1973.")})
+                output$header <- renderText({paste("Visualization of ", variable(), " arrests in US (1973).")})
                 
                 dataList <- reactive({switch(input$Crime,
                                              "Assault" = 1,
