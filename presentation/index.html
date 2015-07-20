@@ -46,14 +46,19 @@
     <!-- SLIDES -->
     <slide class="" id="slide-1" style="background:;">
   <hgroup>
-    <h2>Visualization of Violent Crime Rates</h2>
+    <h2>Introduction</h2>
   </hgroup>
   <article data-timings="">
-    <ol>
-<li>Edit YAML front matter</li>
-<li>Write using R Markdown</li>
-<li>Use an empty line followed by three dashes to separate slides!</li>
-</ol>
+    <p>For this app, I have used the <a href="https://stat.ethz.ch/R-manual/R-devel/library/datasets/html/USArrests.html">USArrests dataset</a>, which comes with R datasets package. This dataset contains arrest statistics for assault, murder, and rape in each of the 50 US states in 1973 and the percentage of the population living in urban areas. The structure of the dataset is as follows:</p>
+
+<ul>
+<li>Murder: number of murder arrests (per 100,000 residents)</li>
+<li>Assault: number of assault arrests (per 100,000 residents)</li>
+<li>UrbanPop: percentage of urban population</li>
+<li>Rape: number of rape arrests (per 100,000 residents) </li>
+</ul>
+
+<p>An intuitive way to visualize the data is to through an interactive map (choropleth). To use the app, select the violent crime type from the dropdown box to display the crime rate for each state as indicated by the color code. The map uses a color legend that reflects the severity of violent crime rate for each state, where blue indicates low crime rate and red indicates high crime rate. The average &amp; standard deviation is also computed and displayed. If you hover your mouse pointer over a state, the number of arrests will be displayed.<br /><br /></p>
 
   </article>
   <!-- Presenter Notes -->
@@ -61,10 +66,17 @@
 
 <slide class="class" id="id" style="background:;">
   <hgroup>
-    <h2>Slide 2</h2>
+    <h2>Bar Graph of Murder Rates</h2>
   </hgroup>
   <article data-timings="">
-    <p>This is slide 2</p>
+    <p>Let&#39;s look at the murder rate for each of the states using a simple bar graph. </p>
+
+<pre><code class="r">state.names = row.names(USArrests)
+barplot(USArrests$Murder, names.arg = state.names, las = 2, ylab = &quot;Murder Rate per 100,000&quot;, 
+    main = &quot;Murder Rate in the United States in 1973&quot;)
+</code></pre>
+
+<p><img src="assets/fig/unnamed-chunk-1-1.png" title="plot of chunk unnamed-chunk-1" alt="plot of chunk unnamed-chunk-1" style="display: block; margin: auto;" /></p>
 
   </article>
   <!-- Presenter Notes -->
@@ -72,10 +84,17 @@
 
 <slide class="class" id="id" style="background:;">
   <hgroup>
-    <h2>Slide 3</h2>
+    <h2>Bar Graph of Assault Rates</h2>
   </hgroup>
   <article data-timings="">
-    <p>This is slide 3</p>
+    <p>Let&#39;s look at the assault rate for each of the states using a simple bar graph. </p>
+
+<pre><code class="r">state.names = row.names(USArrests)
+barplot(USArrests$Assault, names.arg = state.names, las = 2, ylab = &quot;Assault Rate per 100,000&quot;, 
+    main = &quot;Assault Rate in the United States in 1973&quot;)
+</code></pre>
+
+<p><img src="assets/fig/unnamed-chunk-2-1.png" title="plot of chunk unnamed-chunk-2" alt="plot of chunk unnamed-chunk-2" style="display: block; margin: auto;" /></p>
 
   </article>
   <!-- Presenter Notes -->
@@ -83,10 +102,17 @@
 
 <slide class="class" id="id" style="background:;">
   <hgroup>
-    <h2>Slide 4</h2>
+    <h2>Bar Graph of Rape Rates</h2>
   </hgroup>
   <article data-timings="">
-    <p>This is slide 4</p>
+    <p>Let&#39;s look at the rape rate for each of the states using a simple bar graph. </p>
+
+<pre><code class="r">state.names = row.names(USArrests)
+barplot(USArrests$Rape, names.arg = state.names, las = 2, ylab = &quot;Rape Rate per 100,000&quot;, 
+    main = &quot;Rape Rate in the United States in 1973&quot;)
+</code></pre>
+
+<p><img src="assets/fig/unnamed-chunk-3-1.png" title="plot of chunk unnamed-chunk-3" alt="plot of chunk unnamed-chunk-3" style="display: block; margin: auto;" /></p>
 
   </article>
   <!-- Presenter Notes -->
@@ -94,16 +120,16 @@
 
 <slide class="class" id="id" style="background:;">
   <hgroup>
-    <h2>Slide 5</h2>
+    <h2>Credits</h2>
   </hgroup>
   <article data-timings="">
-    <p>This presentation and application were developed as part of the course project for the <a href="https://www.coursera.org/course/devdataprod">Developing Data Products</a> course.<br /><br /></p>
+    <p>This presentation and application are developed as part of the <a href="https://www.coursera.org/course/devdataprod">Developing Data Products</a> course.</p>
 
-<p>The app is located at <a href="https://limminchim.shinyapps.io/PA91">https://limminchim.shinyapps.io/PA91</a>.<br /><br /></p>
+<p>The app is located at <a href="https://limminchim.shinyapps.io/PA91">https://limminchim.shinyapps.io/PA91</a>.</p>
 
-<p>The code for this presentation &amp; shiny app can be found at <a href="https://github.com/limminchim/PA91">Github Repository</a>. <br /><br /></p>
+<p>The code for this presentation &amp; shiny app can be found at <a href="https://github.com/limminchim/PA91">Github Repository</a>.</p>
 
-<p>I would like to give due credit to <a href="https://lenwood.shinyapps.io/USArrests/">https://lenwood.shinyapps.io/USArrests/</a> from which I based my app.<br /><br /></p>
+<p>I would like to give due credit to <a href="https://lenwood.shinyapps.io/USArrests/">https://lenwood.shinyapps.io/USArrests/</a> from which I based my app.</p>
 
   </article>
   <!-- Presenter Notes -->
@@ -115,31 +141,31 @@
     <ul>
       <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=1 title='Visualization of Violent Crime Rates'>
+        data-slide=1 title='Introduction'>
          1
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=2 title='Slide 2'>
+        data-slide=2 title='Bar Graph of Murder Rates'>
          2
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=3 title='Slide 3'>
+        data-slide=3 title='Bar Graph of Assault Rates'>
          3
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=4 title='Slide 4'>
+        data-slide=4 title='Bar Graph of Rape Rates'>
          4
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=5 title='Slide 5'>
+        data-slide=5 title='Credits'>
          5
       </a>
     </li>
@@ -153,21 +179,7 @@
 </body>
   <!-- Load Javascripts for Widgets -->
   
-  <!-- MathJax: Fall back to local if CDN offline but local image fonts are not supported (saves >100MB) -->
-  <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-      tex2jax: {
-        inlineMath: [['$','$'], ['\\(','\\)']],
-        processEscapes: true
-      }
-    });
-  </script>
-  <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-  <!-- <script src="https://c328740.ssl.cf1.rackcdn.com/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-  </script> -->
-  <script>window.MathJax || document.write('<script type="text/x-mathjax-config">MathJax.Hub.Config({"HTML-CSS":{imageFont:null}});<\/script><script src="libraries/widgets/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"><\/script>')
-</script>
-<!-- LOAD HIGHLIGHTER JS FILES -->
+  <!-- LOAD HIGHLIGHTER JS FILES -->
   <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
   <script>hljs.initHighlightingOnLoad();</script>
   <!-- DONE LOADING HIGHLIGHTER JS FILES -->
