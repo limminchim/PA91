@@ -36,22 +36,25 @@ shinyServer(
                         data(stateMapEnv)
                         stateData$state.abb <- state.abb[match(USArrests$State, state.name)]
                         if(d==1) {
-                                gvisGeoChart(stateData, "USArrests.State", "Num.of.Arrests", options=list(
-                                        region="US", displayMode="regions", resolution="provinces", forceIFrame='TRUE', 
+                                map <- gvisGeoChart(stateData, "USArrests.State", "Num.of.Arrests", options=list(
+                                        region="US", displayMode="regions", resolution="provinces", forceIFrame="TRUE", 
                                         backgroundColor="#81d4fa", datalessRegionColor="#f8bbd0", defaultColor = "#f5f5f5",
-                                        colorAxis="{values:[50,100,200,300,350], colors:[\'blue', \'green\', \'yellow', \'orange',\'red']}" ))
+                                        colorAxis="{values:[50,100,200,300,350], colors:['blue', 'green', 'yellow', 'orange', 'red']}" ))
+                                map
                         }
                         else if(d==2) {
-                                gvisGeoChart(stateData, "USArrests.State", "Num.of.Arrests", options=list(
-                                        region="US", displayMode="regions", resolution="provinces", forceIFrame='TRUE',
+                                map <- gvisGeoChart(stateData, "USArrests.State", "Num.of.Arrests", options=list(
+                                        region="US", displayMode="regions", resolution="provinces", forceIFrame="TRUE",
                                         backgroundColor="#81d4fa", datalessRegionColor="#f8bbd0", defaultColor = "#f5f5f5",
-                                        colorAxis="{values:[5,10,20,30,46], colors:[\'blue', \'green\', \'yellow', \'orange',\'red']}" ))
+                                        colorAxis="{values:[5,10,20,30,46], colors:['blue', 'green', 'yellow', 'orange','red']}" ))
+                                map
                         }
                         else if(d==3) {
-                                gvisGeoChart(stateData, "USArrests.State", "Num.of.Arrests", options=list(
-                                        region="US", displayMode="regions", resolution="provinces", forceIFrame='TRUE',
+                                map <- gvisGeoChart(stateData, "USArrests.State", "Num.of.Arrests", options=list(
+                                        region="US", displayMode="regions", resolution="provinces", forceIFrame="TRUE",
                                         backgroundColor="#81d4fa", datalessRegionColor="#f8bbd0", defaultColor = "#f5f5f5",
-                                        colorAxis="{values:[3,5,10,15,18], colors:[\'blue', \'green\', \'yellow', \'orange',\'red']}" ))
+                                        colorAxis="{values:[3,5,10,15,18], colors:['blue', 'green', 'yellow', 'orange','red']}" ))
+                                map
                         }
                 })
                 
